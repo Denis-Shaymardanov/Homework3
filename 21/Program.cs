@@ -3,6 +3,19 @@
 // находит расстояние между ними в 3D пространстве.
 // A (3,6,8); B (2,1,-7), -> 15.84
 // A (7,-5, 0); B (1,-1,9) -> 11.53
+int[] InputCoordinates()
+{
+    int[] result = new int[3];
+    Console.WriteLine("Введите координату X точки");
+    result[0] = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите координату Y точки");
+    result[1] = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите координату Z точки");
+    result[2] = Convert.ToInt32(Console.ReadLine());
+
+    return result;
+}
+
 double distance(int[] A, int[] B)
 {
     double result = 0;
@@ -15,21 +28,7 @@ double distance(int[] A, int[] B)
     return result;
 }
 
-int [] A = new int[3];
-int [] B = new int[3];
-
-Console.WriteLine("Введите координату X первой точки");
-A[0] = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Y первой точки");
-A[1] = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Z первой точки");
-A[2] = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите координату X второй точки");
-B[0] = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Y второй точки");
-B[1] = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Z второй точки");
-B[2] = Convert.ToInt32(Console.ReadLine());
+int [] A = InputCoordinates();
+int [] B = InputCoordinates();
 
 Console.WriteLine("Расстояние между точками A и B - " + distance(A, B));
